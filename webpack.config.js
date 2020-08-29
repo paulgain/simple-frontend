@@ -15,7 +15,35 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                compileType: 'module'
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: { 
+              plugins: [
+                require('autoprefixer')
+              ]
+            },
+          },
+          {
+            loader: 'sass-loader'
+          },
+        ],
+      },
     ],
   },
   plugins: [
