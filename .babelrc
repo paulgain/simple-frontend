@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@babel/preset-env",  // Use the latest JS
+    "@babel/preset-react" // Transform JSX
+  ]
+}
